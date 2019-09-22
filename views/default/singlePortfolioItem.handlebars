@@ -1,0 +1,63 @@
+<div class="mainContent"> <!--  class="mainContent" -->
+    <div class="single-post-column">
+    <!-- Title -->
+    <h1 class="mt-4">{{portfolioItem.title}}</h1>
+
+        <!-- Author -->
+        <p>
+            Published by
+            <a href="#">Admin</a>
+        </p>
+        <hr>
+
+        <!-- Date/Time
+        <p>Posted on {{portfolioItem.creationDate}} </p>
+
+        <hr> -->
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="{{portfolioItem.file}}" alt="Portfolio Image">
+
+        <hr>
+
+        <!-- Post Content -->
+        <div class="lead">
+            <p>{{{portfolioItem.description}}}</p>
+        </div>
+
+
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+                <form action="/post/{{portfolioItem._id}}" method="post">
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3" name="comment_body"></textarea>
+                        <input type="hidden" name="id" value="{{portfolioItem._id}}">
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Single Comment -->
+
+        {{#each portfolioItem.comments}}
+            {{#if commentIsApproved}}
+                <div class="media mb-4">
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                    <div class="media-body">
+                        <h5 class="mt-0">{{user.firstName}} {{user.lastName}}</h5>
+                        {{body}}
+                    </div>
+                </div>
+            {{/if}}
+
+        {{/each}}
+
+
+
+    </div>
+</div>

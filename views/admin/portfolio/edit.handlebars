@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="alert alert-secondary text-center">
+        <h1>Edit Portfolio Item</h1>
+    </div>
+
+    <div class="row p-4">
+        <div class="col-md-12">
+            <form action="/admin/portfolio/edit/{{portfolioItem._id}}?newMethod=PUT" method="post">
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Enter the Title" value="{{portfolioItem.title}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control">
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                        <option value="draft">Draft</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" class="form-control">
+                        {{#select portfolioItem.category}}
+                            {{#each categories}}
+                                <option value="{{_id}}">{{title}}</option>
+                            {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+
+
+                <div class="form-check ml-3">
+                    <label for="allowComments">
+                        <input type="checkbox" class="form-check-input" id="allowComments" name="allowComments">
+                        Allow Comments
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Content</label>
+                    <textarea name="description" id="description" class="form-control" placeholder="Enter your content here" rows="10">{{portfolioItem.description}}</textarea>
+                </div>
+
+
+                <button class="btn btn-outline-warning btn-lg" type="submit">Update Portfolio Item</button>
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

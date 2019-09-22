@@ -1,0 +1,20 @@
+<div class="mainContent">
+    <div class="card-items">
+
+        <!-- Portfolio item -->
+        {{#each portfolioItems}}
+
+            <div>
+                <img src="{{file}}" alt="Card image cap" class="img-fluid rounded img-size">
+                <div class="one-item-description">
+                    <h2 class="card-title">{{title}}</h2>
+                    <p class="card-text desc">{{description}}</p>
+                    <a href="/portfolio/{{id}}" class="btn">Read More &rarr;</a>
+                    <p class="card-text">Published <!--on {{creationDate}}--> by <a href="#">Admin</a></p>
+                </div>
+            </div>
+
+        {{/each}}
+
+    </div>
+</div>

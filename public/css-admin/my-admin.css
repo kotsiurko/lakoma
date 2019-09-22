@@ -1,0 +1,24 @@
+/* style for cutting long text */
+/*.desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}*/
+.desc {
+    white-space: nowrap;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* END style for cutting long text */
+
+.nav-links{
+    min-width: 2em;
+    text-align: center;
+}
+.nav-links:hover{
+    text-decoration: none;
+}

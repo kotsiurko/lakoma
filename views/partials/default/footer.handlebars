@@ -1,0 +1,59 @@
+</div>
+<!-- Main Content END -->
+
+</div><!-- wrapper -->
+
+</div><!-- /container -->
+
+
+
+<!-- Backing Vertical Navigation -->
+<nav class="outer-nav left vertical">
+    <a href="/"><i class="fas fa-home nav-links"></i>Home</a>
+    <a href="/about"><i class="fas fa-info nav-links"></i>About</a>
+    <a href="/portfolio"><i class="fas fa-briefcase nav-links"></i>Portfolio</a>
+    <a href="/blog"><i class="fab fa-blogger-b nav-links"></i>Blog</a>
+    <a href="/contacts"><i class="fas fa-id-card nav-links"></i>Contacts</a>
+
+    {{#if user}}
+        <a href="/admin"><i class="fas fa-chalkboard-teacher nav-links"></i>Admin</a>
+        <a href="/logout"><i class="fas fa-sign-out-alt nav-links"></i>Logout</a>
+
+    {{else}}
+        <a href="/login"><i class="fas fa-sign-in-alt nav-links"></i>Login</a>
+        <a href="/register"><i class="fas fa-database nav-links"></i>Register</a>
+    {{/if}}
+
+</nav>
+<!-- Backing Vertical Navigation END-->
+
+
+</div><!-- /perspective -->
+
+<!-- Bootstrap core JavaScript-->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('.alert').slideUp(1000);
+        },5000);
+    });
+</script>
+
+
+<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load -->
+<script src="/js-index/modernizr.custom.25376.js"></script>
+<script src="/js-index/classie.js"></script>
+<script src="/js-index/menu.js"></script>
+
+</body>
+</html>
